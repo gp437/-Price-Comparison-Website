@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>COMPARE BIKE PRICES</title>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<script  type="text/javascript" src="typeahead.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $('input.typeahead').typeahead({
+        name: 'countries',
+        remote: 'http://localhost:3000/search?key=%QUERY',
+        limit: 20
+    });
+});
+</script>
+<div id="app">
+	
+</div>
+<script>
+	const app = new Vue({
+	 el: '#app',
+      data: {
+        showbikes: [],
+        bikename: null,
+        bikedescription: null,
+		bikeprice: null,
+		search: null,
+      },
+      methods: {
+        checkForm: function (e) {
+		  if (search == 'http://localhost:3000/search?key=%QUERY'){
+			  this.showbikes.push(search),
+			  console.log(showbikes);
+		  }
+		}}
+	})
+</script>
+
+</head>
+<body>
+   <div class="page-header">
+		<h1>Price Comparison</h1>
+    </div>
+    <div class="bs-example">
+        <input type="text" name="typeahead" class="typeahead tt-query" autocomplete="off" spellcheck="false" placeholder="Search for a bike">
+	</div>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Styles starts here -->
+	<style type="text/css">
+		.bs-example{
+			font-family: sans-serif;
+			position: relative;
+			margin: 50px;
+		}
+		.typeahead, .tt-query, .tt-hint {
+			border: 2px solid #CCCCCC;
+			border-radius: 8px;
+			font-size: 24px;
+			height: 30px;
+			line-height: 30px;
+			outline: medium none;
+			padding: 8px 12px;
+			width: 396px;
+		}
+		.typeahead {
+			background-color: #FFFFFF;
+		}
+		.typeahead:focus {
+			border: 2px solid #0097CF;
+		}
+		.tt-query {
+			box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+		}
+		.tt-hint {
+			color: #999999;
+		}
+		.tt-dropdown-menu {
+			background-color: #FFFFFF;
+			border: 1px solid rgba(0, 0, 0, 0.2);
+			border-radius: 8px;
+			box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+			margin-top: 12px;
+			padding: 8px 0;
+			width: 422px;
+		}
+		.tt-suggestion {
+			font-size: 24px;
+			line-height: 24px;
+			padding: 3px 20px;
+		}
+		.tt-suggestion.tt-is-under-cursor {
+			background-color: #0097CF;
+			color: #FFFFFF;
+		}
+		.tt-suggestion p {
+			margin: 0;
+		}
+		</style>
+</body>
+</html>

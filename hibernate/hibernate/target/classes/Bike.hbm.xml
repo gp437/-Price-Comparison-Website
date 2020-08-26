@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class name="hibernate.BikeXml" table="bikes">
+    <id name="id" type="int">
+      <column name="id"/>
+      <generator class="increment"/>
+    </id>
+    <property name="bikeName" type="string">
+      <column name="bikeName"/>
+    </property>
+    <property name="bikeDescription" type="string">
+      <column name="bikeDescription"/>
+    </property>
+    <property name="weight" type="int">
+      <column name="weight"/>
+    </property>
+    <property name="price" type="string">
+      <column name="price"/>
+    </property>
+    <property name="urlID" type="int">
+      <column name="urlID"/>
+    </property>
+  </class>
+</hibernate-mapping>
